@@ -29,16 +29,16 @@ class GameOverScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: onRestart,
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
+                  // backgroundColor: Colors.orange,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  )),
+                borderRadius: BorderRadius.circular(5),
+              )),
               child: Text(
                 "Restart",
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!
-                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+                    .copyWith(fontWeight: FontWeight.bold),
               ),
             )
           ],
