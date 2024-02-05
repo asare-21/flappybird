@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/flame.dart';
 import 'package:flappybird/game/assets.dart';
@@ -19,6 +20,7 @@ class Pipe extends SpriteComponent with HasGameRef<FlappyBirdGame> {
     final pipeRotated = await Flame.images.load(Assets.pipeRotated);
 
     size = Vector2(52, pipeHeight);
+    add(RectangleHitbox()); // collision detection
 
     switch (pipePosition) {
       case PipePosition.top:

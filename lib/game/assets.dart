@@ -12,5 +12,5 @@ class Assets {
 
   static const message = 'assets/images/message.png';
   static const gameOver = 'assets/images/gameover.png';
-  static const menu = 'assets/images/menu.png';
+  static const menu = 'assets/images/menu.jpg';
 }
