@@ -1,6 +1,7 @@
 import 'package:flappybird/game/assets.dart';
 import 'package:flappybird/game/flappy_bird_game.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class GameOverScreen extends StatelessWidget {
   static const id = "gameover";
@@ -16,7 +17,22 @@ class GameOverScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(Assets.gameOver),
-            ElevatedButton(onPressed: onRestart, child: const Text("Restart"))
+            const Gap(30),
+            ElevatedButton(
+              onPressed: onRestart,
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orange,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  )),
+              child: Text(
+                "Restart",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            )
           ],
         ),
       ),
