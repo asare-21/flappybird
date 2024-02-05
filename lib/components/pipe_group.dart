@@ -30,14 +30,26 @@ class PipeGroud extends PositionComponent with HasGameRef<FlappyBirdGame> {
   void update(double dt) {
     if (position.x < -10) {
       removeFromParent();
+      updateScore();
       debugPrint("Removed");
     }
 
     if (gameRef.isHit) {
       removeFromParent();
       gameRef.isHit = false;
+      resetScore();
     }
     position.x -= Config.gameSpeed * dt;
     super.update(dt);
+  }
+
+  void updateScore() {
+    gameRef.bird.score += 1;
+    gameRef.score.text = "Score: ${gameRef.bird.score}";
+  }
+
+  resetScore() {
+    gameRef.bird.score = 0;
+    gameRef.score.text = "Score: ${gameRef.bird.score}";
   }
 }
